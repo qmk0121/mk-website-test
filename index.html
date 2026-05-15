@@ -3,71 +3,239 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MK Website</title>
+    <title>Dylan MK | Official Website</title>
 
     <style>
-        body {
-            margin: 0;
-            background: #111827;
-            color: white;
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
         }
 
-        .container {
-            padding: 20px;
+        body{
+            font-family:Arial, sans-serif;
+            background:#0f172a;
+            color:white;
+            overflow-x:hidden;
         }
 
-        h1 {
-            font-size: 50px;
-            margin-bottom: 10px;
+        nav{
+            width:100%;
+            padding:20px 50px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            position:fixed;
+            top:0;
+            backdrop-filter:blur(10px);
+            background:rgba(15,23,42,0.7);
+            z-index:1000;
         }
 
-        p {
-            color: #9ca3af;
-            font-size: 20px;
+        nav h2{
+            font-size:24px;
         }
 
-        button {
-            margin-top: 20px;
-            padding: 12px 24px;
-            border: none;
-            border-radius: 10px;
-            background: #2563eb;
-            color: white;
-            cursor: pointer;
-            font-size: 16px;
+        nav ul{
+            display:flex;
+            gap:30px;
+            list-style:none;
         }
 
-        button:hover {
-            background: #1d4ed8;
+        nav a{
+            color:white;
+            text-decoration:none;
+            transition:0.3s;
         }
+
+        nav a:hover{
+            color:#38bdf8;
+        }
+
+        .hero{
+            height:100vh;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+            padding:20px;
+            background:
+            radial-gradient(circle at top,#1e3a8a 0%,#0f172a 60%);
+        }
+
+        .hero h1{
+            font-size:70px;
+            margin-bottom:20px;
+        }
+
+        .hero p{
+            font-size:22px;
+            max-width:700px;
+            color:#cbd5e1;
+            line-height:1.6;
+        }
+
+        .hero button{
+            margin-top:40px;
+            padding:15px 35px;
+            border:none;
+            border-radius:15px;
+            background:#38bdf8;
+            color:black;
+            font-size:18px;
+            font-weight:bold;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        .hero button:hover{
+            transform:translateY(-5px);
+            background:white;
+        }
+
+        .section{
+            padding:120px 50px;
+            text-align:center;
+        }
+
+        .section h2{
+            font-size:45px;
+            margin-bottom:30px;
+        }
+
+        .cards{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:30px;
+            margin-top:50px;
+        }
+
+        .card{
+            background:#1e293b;
+            padding:40px;
+            border-radius:20px;
+            transition:0.3s;
+        }
+
+        .card:hover{
+            transform:translateY(-10px);
+            background:#334155;
+        }
+
+        .card h3{
+            margin-bottom:15px;
+            font-size:24px;
+        }
+
+        .card p{
+            color:#cbd5e1;
+            line-height:1.6;
+        }
+
+        footer{
+            padding:40px;
+            text-align:center;
+            color:#94a3b8;
+            border-top:1px solid #1e293b;
+        }
+
+        @media(max-width:768px){
+
+            nav{
+                padding:20px;
+            }
+
+            nav ul{
+                display:none;
+            }
+
+            .hero h1{
+                font-size:45px;
+            }
+
+            .hero p{
+                font-size:18px;
+            }
+
+        }
+
     </style>
 </head>
 
 <body>
 
-<div class="container">
-    <h1>Welcome MK</h1>
+    <nav>
+        <h2>MK</h2>
 
-    <p>
-        This is my first GitHub website.
-    </p>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
 
-    <button onclick="showMessage()">
-        Click Me
-    </button>
-</div>
+    <section class="hero">
 
-<script>
-    function showMessage() {
-        alert("Website is working!");
-    }
-</script>
+        <h1>Build The Future</h1>
+
+        <p>
+            Welcome to Dylan MK official website.
+            Technology, fitness, creativity and innovation combined into one modern digital experience.
+        </p>
+
+        <button onclick="showMessage()">
+            Explore More
+        </button>
+
+    </section>
+
+    <section class="section">
+
+        <h2>What I Do</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Technology</h3>
+                <p>
+                    Building websites, apps and modern digital systems.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Fitness</h3>
+                <p>
+                    Training, HYROX, performance and personal improvement.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Creativity</h3>
+                <p>
+                    Combining design, branding and futuristic experiences.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+        © 2026 Dylan MK. All rights reserved.
+    </footer>
+
+    <script>
+
+        function showMessage(){
+
+            alert("Welcome to the future.");
+
+        }
+
+    </script>
 
 </body>
 </html>
