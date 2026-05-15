@@ -5,163 +5,193 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MK | Official Website</title>
 
-    <style>
+<style>
 
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-        }
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+    }
 
-        body{
-            font-family:Arial, sans-serif;
-            background:#0f172a;
-            color:white;
-            overflow-x:hidden;
-        }
+    body{
+        font-family:Arial, sans-serif;
+        background:#0f172a;
+        color:white;
+        overflow-x:hidden;
+    }
+
+    nav{
+        width:100%;
+        padding:20px 50px;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        position:fixed;
+        top:0;
+        backdrop-filter:blur(10px);
+        background:rgba(15,23,42,0.7);
+        z-index:1000;
+    }
+
+    nav h2{
+        font-size:24px;
+    }
+
+    nav ul{
+        display:flex;
+        gap:30px;
+        list-style:none;
+    }
+
+    nav a{
+        color:white;
+        text-decoration:none;
+        transition:0.3s;
+    }
+
+    nav a:hover{
+        color:#38bdf8;
+    }
+
+    .menu-toggle{
+        display:none;
+        font-size:30px;
+        cursor:pointer;
+    }
+
+    .hero{
+        height:100vh;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        text-align:center;
+        padding:20px;
+        background:
+        radial-gradient(circle at top,#1e3a8a 0%,#0f172a 60%);
+    }
+
+    .hero h1{
+        font-size:70px;
+        margin-bottom:20px;
+    }
+
+    .hero p{
+        font-size:22px;
+        max-width:700px;
+        color:#cbd5e1;
+        line-height:1.6;
+    }
+
+    .hero button{
+        margin-top:40px;
+        padding:15px 35px;
+        border:none;
+        border-radius:15px;
+        background:#38bdf8;
+        color:black;
+        font-size:18px;
+        font-weight:bold;
+        cursor:pointer;
+        transition:0.3s;
+    }
+
+    .hero button:hover{
+        transform:translateY(-5px);
+        background:white;
+    }
+
+    .section{
+        padding:120px 50px;
+        text-align:center;
+    }
+
+    .section h2{
+        font-size:45px;
+        margin-bottom:30px;
+    }
+
+    .cards{
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+        gap:30px;
+        margin-top:50px;
+    }
+
+    .card{
+        background:#1e293b;
+        padding:40px;
+        border-radius:20px;
+        transition:0.3s;
+    }
+
+    .card:hover{
+        transform:translateY(-10px);
+        background:#334155;
+    }
+
+    .card h3{
+        margin-bottom:15px;
+        font-size:24px;
+    }
+
+    .card p{
+        color:#cbd5e1;
+        line-height:1.6;
+    }
+
+    footer{
+        padding:40px;
+        text-align:center;
+        color:#94a3b8;
+        border-top:1px solid #1e293b;
+    }
+
+    @media(max-width:768px){
 
         nav{
-            width:100%;
-            padding:20px 50px;
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-            position:fixed;
-            top:0;
-            backdrop-filter:blur(10px);
-            background:rgba(15,23,42,0.7);
-            z-index:1000;
+            padding:20px;
         }
 
-        nav h2{
-            font-size:24px;
+        .menu-toggle{
+            display:block;
         }
 
         nav ul{
-            display:flex;
-            gap:30px;
-            list-style:none;
-        }
-
-        nav a{
-            color:white;
-            text-decoration:none;
-            transition:0.3s;
-        }
-
-        nav a:hover{
-            color:#38bdf8;
-        }
-
-        .hero{
-            height:100vh;
-            display:flex;
+            display:none;
             flex-direction:column;
-            justify-content:center;
-            align-items:center;
-            text-align:center;
+            position:absolute;
+            top:80px;
+            right:20px;
+            background:#1e293b;
             padding:20px;
-            background:
-            radial-gradient(circle at top,#1e3a8a 0%,#0f172a 60%);
+            border-radius:15px;
+            width:200px;
+        }
+
+        nav ul.active{
+            display:flex;
         }
 
         .hero h1{
-            font-size:70px;
-            margin-bottom:20px;
+            font-size:45px;
         }
 
         .hero p{
-            font-size:22px;
-            max-width:700px;
-            color:#cbd5e1;
-            line-height:1.6;
-        }
-
-        .hero button{
-            margin-top:40px;
-            padding:15px 35px;
-            border:none;
-            border-radius:15px;
-            background:#38bdf8;
-            color:black;
             font-size:18px;
-            font-weight:bold;
-            cursor:pointer;
-            transition:0.3s;
-        }
-
-        .hero button:hover{
-            transform:translateY(-5px);
-            background:white;
         }
 
         .section{
-            padding:120px 50px;
-            text-align:center;
+            padding:80px 20px;
         }
 
         .section h2{
-            font-size:45px;
-            margin-bottom:30px;
+            font-size:35px;
         }
 
-        .cards{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-            gap:30px;
-            margin-top:50px;
-        }
+    }
 
-        .card{
-            background:#1e293b;
-            padding:40px;
-            border-radius:20px;
-            transition:0.3s;
-        }
-
-        .card:hover{
-            transform:translateY(-10px);
-            background:#334155;
-        }
-
-        .card h3{
-            margin-bottom:15px;
-            font-size:24px;
-        }
-
-        .card p{
-            color:#cbd5e1;
-            line-height:1.6;
-        }
-
-        footer{
-            padding:40px;
-            text-align:center;
-            color:#94a3b8;
-            border-top:1px solid #1e293b;
-        }
-
-        @media(max-width:768px){
-
-            nav{
-                padding:20px;
-            }
-
-            nav ul{
-                display:none;
-            }
-
-            .hero h1{
-                font-size:45px;
-            }
-
-            .hero p{
-                font-size:18px;
-            }
-
-        }
-
-    </style>
+</style>
 </head>
 
 <body>
@@ -169,7 +199,11 @@
     <nav>
         <h2>MK</h2>
 
-        <ul>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            ☰
+    </div>
+        
+        <ul id="nav-menu">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="#">Projects</a></li>
@@ -241,6 +275,14 @@
             alert("Welcome to the future.");
 
         }
+
+        function toggleMenu(){
+
+    const menu = document.getElementById("nav-menu");
+
+    menu.classList.toggle("active");
+
+}
 
     </script>
 
